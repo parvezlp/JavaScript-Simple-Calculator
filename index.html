@@ -11,38 +11,122 @@
     
     <div class="container">
         <div class="input-section half-width">
-            <input class="form-control" type="text" placeholder="0">
+            <input class="form-control" id="display" type="text" value="">
             <div class="numbers">
                 <div class="calc-body">
                     <div class="calc-button-row">
-                        <div class="button">7</div>
-                        <div class="button">8</div>
-                        <div class="button">9</div>
-                        <div class="button">/</div>
+                        <div id="7" class="button">7</div>
+                        <div id="8"  class="button">8</div>
+                        <div id="9"  class="button">9</div>
+                        <div id="/"  class="button">/</div>
                     </div>
                     <div class="calc-button-row">
-                        <div class="button">4</div>
-                        <div class="button">5</div>
-                        <div class="button">6</div>
-                        <div class="button">*</div>
+                        <div id="4"  class="button">4</div>
+                        <div id="5"  class="button">5</div>
+                        <div id="6"  class="button">6</div>
+                        <div id="*"  class="button">*</div>
                     </div>
                     <div class="calc-button-row">
-                        <div class="button">1</div>
-                        <div class="button">2</div>
-                        <div class="button">3</div>
-                        <div class="button">-</div>
+                        <div id="1"  class="button">1</div>
+                        <div id="2"  class="button">2</div>
+                        <div id="3"  class="button">3</div>
+                        <div id="-"  class="button">-</div>
                     </div>
                     <div class="calc-button-row">
-                        <div class="button">C</div>
-                        <div class="button">0</div>
-                        <div class="button">=</div>
-                        <div class="button">+</div>
+                        <div id="C"  class="button">C</div>
+                        <div id="0"  class="button">0</div>
+                        <div id="="  class="button">=</div>
+                        <div id="+"  class="button">+</div>
                     </div>
             </div>
         </div>
     </div>
     <script>
+        document.getElementById('0').addEventListener('click',function(){
+            display(0);
+        })
+
+        document.getElementById('1').addEventListener('click',function(){
+            display(1);
+        })
+
+        document.getElementById('2').addEventListener('click',function(){
+            display(2);
+        })
+
+        document.getElementById('3').addEventListener('click',function(){
+            display(3);
+        })
+
+        document.getElementById('4').addEventListener('click',function(){
+            display(4);
+        })
+
+        document.getElementById('5').addEventListener('click',function(){
+            display(5);
+        })
+
+        document.getElementById('6').addEventListener('click',function(){
+            display(6);
+        })
+
+        document.getElementById('7').addEventListener('click',function(){
+            display(7);
+        })
+
+        document.getElementById('8').addEventListener('click',function(){
+            display(8);
+        })
+
+        document.getElementById('9').addEventListener('click',function(){
+            display(9);
+        })
+
+        document.getElementById('/').addEventListener('click',function(){
+            display('/');
+        })
+
+        document.getElementById('*').addEventListener('click',function(){
+            display("*");
+        })
+
+        document.getElementById('-').addEventListener('click',function(){
+            display('-');
+        })
+
+        document.getElementById('+').addEventListener('click',function(){
+            display('+');
+        })
+
+        document.getElementById('=').addEventListener('click',function(){
+            dataCalculation();
+        })
+
+        document.getElementById('C').addEventListener('click',function(){
+            // document.getElementById("display").value = 0;
+            clearDispaly();
+        })
+
+
+        function dataCalculation(){
+            var result = document.getElementById('display').value;
+            console.log(result);
+            document.getElementById('display').value = eval(result);
+        }
         
+        function display(num){
+            document.getElementById("display").value += document.getElementById(num).innerText;
+        }
+
+        function clearDispaly(){
+            document.getElementById("display").value = '';
+        }
+        
+        // function myFunction(num){
+        //     document.getElementById("display").value += num;
+        //     console.log(num);
+        // }
+
     </script>
 </body>
 </html>
