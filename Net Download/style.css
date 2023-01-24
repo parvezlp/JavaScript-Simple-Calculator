@@ -1,0 +1,12 @@
+input {
+       font-family: consola, monospace;
+       color: blue;
+     }
+     td {
+       margin-left: auto;
+       margin-right: auto;
+       text-align: center;
+     }
+     table {
+       border: thick solid;
+     }
